@@ -3,7 +3,8 @@ import { useLoaderData } from 'react-router-dom'; //loader data also works in ch
 import EventsList from '../components/EventsList';
 
 function EventsPage() {
-  const events = useLoaderData();
+  const data = useLoaderData();
+  const { events } = data;
 
   return (
     <>
@@ -20,7 +21,8 @@ export async function loader() {
   if (!res.ok) {
     //..
   } else {
-    const data = await res.json();
-    return data.events;
+    return res; // return res immediately. .. where does res.json() go??
+    // const data = await res.json();
+    // return data.events;
   }
 }
