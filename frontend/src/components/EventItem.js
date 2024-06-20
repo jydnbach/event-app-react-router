@@ -1,9 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useSubmit } from 'react-router-dom';
 import classes from './EventItem.module.css';
 
 function EventItem({ event }) {
+  const submit = useSubmit();
+
   function startDeleteHandler() {
-    // ...
+    const proceed = window.confirm('Are you sure?');
+
+    if (proceed) {
+      submit(null, { method: 'delete' });
+      //1st arg: data to submit 2nd: method value for form 3rd: action path for diff route
+      //Q: why not all caps for delete?
+    }
   }
 
   return (
