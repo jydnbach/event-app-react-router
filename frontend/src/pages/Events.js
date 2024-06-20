@@ -19,7 +19,7 @@ export async function loader() {
   const res = await fetch('http://localhost:8080/events');
 
   if (!res.ok) {
-    //..
+    throw { message: 'Could not fetch events.' };
   } else {
     return res; // return res immediately. .. where does res.json() go??
     // const data = await res.json();
