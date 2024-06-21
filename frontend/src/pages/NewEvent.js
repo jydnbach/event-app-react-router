@@ -24,6 +24,10 @@ export async function action({ request, params }) {
     body: JSON.stringify(eventData),
   });
 
+  if (res.status === 422) {
+    return res;
+  }
+
   if (!res.ok) {
     throw json({ message: 'error' }, { status: 500 });
   }
