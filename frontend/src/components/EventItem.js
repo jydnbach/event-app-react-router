@@ -8,7 +8,7 @@ function EventItem({ event }) {
     const proceed = window.confirm('Are you sure?');
 
     if (proceed) {
-      submit(null, { method: 'delete' });
+      submit(null, { method: 'DELETE' });
       //1st arg: data to submit 2nd: method value for form 3rd: action path for diff route
       //Q: why not all caps for delete?
     }
