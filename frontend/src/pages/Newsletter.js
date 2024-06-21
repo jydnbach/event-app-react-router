@@ -1,4 +1,4 @@
-import NewsletterSignup from '../components/NewsLetterSignup';
+import NewsletterSignup from '../components/NewsletterSignup';
 import PageContent from '../components/PageContent';
 
 function NewsletterPage() {
